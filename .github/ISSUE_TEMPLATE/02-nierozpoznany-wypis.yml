@@ -1,0 +1,86 @@
+name: "Nierozpoznany wypis"
+description: "Program napisał „Nie rozpoznano układu wypisu” albo odczytał wypis niekompletnie."
+title: "[Wypis] "
+labels: ["nowy wzór wypisu"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Najpierw sprawdź jedno
+
+        Nierozpoznany układ **najczęściej znaczy, że masz starszą wersję programu**,
+        a nie że wzór jest nowy. Sprawdź w oknie „O programie”, którą wersję masz,
+        i porównaj z najnowszą. Jeśli jest nowsza — zainstaluj ją i spróbuj ponownie.
+
+        ---
+
+        ### Czego NIE wysyłaj tutaj
+
+        **Ani wypisu PDF, ani raportu układu z programu.** Raport zawiera pełną treść
+        wypisu razem z nazwiskami, adresami i numerami PESEL — to repozytorium jest
+        publiczne, więc raport idzie **wyłącznie mailem**.
+
+        Tutaj wpisz tylko odcisk układu i nazwę starostwa. To wystarczy, żeby
+        rozpoznać, czy taki wzór już jest w kolejce.
+
+  - type: input
+    id: wersja
+    attributes:
+      label: "Wersja programu"
+      placeholder: "np. 1.0.1"
+    validations:
+      required: true
+
+  - type: input
+    id: odcisk
+    attributes:
+      label: "Odcisk układu"
+      description: "Program podaje go w ostrzeżeniu, w nawiasie — krótki kod zaczynający się od „u-”. Nie ma w nim żadnych danych właściciela."
+      placeholder: "u-1b55a9"
+    validations:
+      required: true
+
+  - type: input
+    id: starostwo
+    attributes:
+      label: "Z którego starostwa pochodzi wypis"
+      placeholder: "np. Starostwo Powiatowe w Trzebnicy"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: rodzaj
+    attributes:
+      label: "Co dokładnie się stało"
+      options:
+        - "Program napisał, że nie rozpoznaje układu"
+        - "Wypis został wczytany, ale brakuje właścicieli albo działek"
+        - "Wypis został wczytany, ale dane są przypisane do złych osób"
+    validations:
+      required: true
+
+  - type: input
+    id: ile_plikow
+    attributes:
+      label: "Ilu plików to dotyczy"
+      description: "Jeden wypis czy cała paczka z tego starostwa."
+      placeholder: "np. 12 z 40 w folderze"
+
+  - type: textarea
+    id: material
+    attributes:
+      label: "Raport układu wysłany mailem"
+      description: "W programie: przycisk „Zgłoś nierozpoznany wypis”, zapisz plik i wyślij go mailem. Tutaj napisz tylko, że wysłałeś."
+      placeholder: "Wysłałem raport mailem 21.08."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: dane_osobowe
+    attributes:
+      label: "Potwierdzenie"
+      options:
+        - label: "Nie załączyłem tutaj wypisu ani raportu układu — wysłałem je mailem."
+          required: true
+        - label: "Sprawdziłem, że powyżej nie ma nazwisk, numerów PESEL, adresów ani numerów ksiąg wieczystych."
+          required: true

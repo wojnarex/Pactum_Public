@@ -1,0 +1,12 @@
+# Puste zgloszenia wylaczone: caly mechanizm ochrony danych osobowych siedzi
+# w formularzach. Puste okno tekstowe to zaproszenie do wklejenia wypisu.
+blank_issues_enabled: false
+
+contact_links:
+  - name: "Program blokuje pracę i sprawa jest pilna"
+    url: "mailto:marcin.wojnarowski@outlook.com?subject=PACTUM%20PILNE"
+    about: "Nie zakładaj zgłoszenia — zadzwoń albo napisz maila. Zgłoszenie tutaj załóż później, żeby został ślad."
+
+  - name: "Muszę wysłać wypis, raport układu albo zrzut ekranu z danymi"
+    url: "mailto:marcin.wojnarowski@outlook.com?subject=PACTUM%20materia%C5%82%20do%20zg%C5%82oszenia"
+    about: "Pliki z danymi właścicieli idą WYŁĄCZNIE mailem. Nigdy tutaj — to repozytorium jest publiczne."

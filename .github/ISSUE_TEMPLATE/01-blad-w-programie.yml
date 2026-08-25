@@ -1,0 +1,95 @@
+name: "Błąd w programie"
+description: "Program zrobił coś innego, niż powinien — albo dokument wyszedł źle."
+title: "[Błąd] "
+labels: ["do sprawdzenia"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Zanim wypełnisz — jedna rzecz
+
+        **To repozytorium jest publiczne.** Wszystko, co tu wpiszesz, może przeczytać
+        każdy i znaleźć Google. Nie wklejaj i nie załączaj:
+
+        * nazwisk właścicieli, numerów PESEL, adresów, numerów ksiąg wieczystych,
+        * wypisów PDF ani wygenerowanych porozumień,
+        * **raportu układu z programu** — on zawiera pełną treść wypisu,
+        * zrzutów ekranu, na których widać tabelę z danymi.
+
+        Te rzeczy wyślij **mailem**, a tutaj napisz tylko, że je wysłałeś.
+        Opisz problem swoimi słowami — to w zupełności wystarczy, żeby zacząć.
+
+  - type: input
+    id: wersja
+    attributes:
+      label: "Wersja programu"
+      description: "Znajdziesz ją w oknie „O programie” — przycisk przy licznikach nad tabelą."
+      placeholder: "np. 1.0.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: oddzial
+    attributes:
+      label: "Oddział"
+      description: "Pomaga ustalić, czy problem dotyczy jednego stanowiska, czy wszystkich."
+      options:
+        - "Wrocław"
+        - "Rawicz"
+        - "Poznań"
+    validations:
+      required: true
+
+  - type: textarea
+    id: co_robilem
+    attributes:
+      label: "Co robiłeś"
+      description: "Krok po kroku, na tyle dokładnie, żeby dało się powtórzyć."
+      placeholder: |
+        1. Wskazałem folder z wypisami
+        2. Uzupełniłem stałe projektu
+        3. Kliknąłem „Generuj porozumienia”
+    validations:
+      required: true
+
+  - type: textarea
+    id: co_sie_stalo
+    attributes:
+      label: "Co się stało"
+    validations:
+      required: true
+
+  - type: textarea
+    id: czego_oczekiwalem
+    attributes:
+      label: "Czego się spodziewałeś"
+      description: "Bez tego trudno odróżnić błąd programu od nieporozumienia co do tego, jak ma działać."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: zablokowalo
+    attributes:
+      label: "Czy to zablokowało pracę?"
+      description: "Decyduje o kolejności. „Tak” znaczy: nie dało się iść dalej ani obejść problemu."
+      options:
+        - "Tak — nie dało się pracować dalej"
+        - "Nie — dało się obejść, ale przeszkadza"
+        - "Nie — drobiazg, zgłaszam żeby został ślad"
+    validations:
+      required: true
+
+  - type: textarea
+    id: material
+    attributes:
+      label: "Materiał wysłany mailem"
+      description: "Jeśli wysłałeś wypis, raport układu albo zrzut ekranu — napisz kiedy i co. Sam materiał zostaw w mailu."
+      placeholder: "Wysłałem raport układu mailem 21.08 po południu, temat „PACTUM materiał”."
+
+  - type: checkboxes
+    id: dane_osobowe
+    attributes:
+      label: "Potwierdzenie"
+      options:
+        - label: "Sprawdziłem, że powyżej nie ma nazwisk, numerów PESEL, adresów ani numerów ksiąg wieczystych."
+          required: true

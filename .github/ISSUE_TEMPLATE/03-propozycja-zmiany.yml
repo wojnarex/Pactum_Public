@@ -1,0 +1,77 @@
+name: "Propozycja zmiany"
+description: "Coś działa, ale mogłoby działać wygodniej — albo czegoś brakuje."
+title: "[Propozycja] "
+labels: ["propozycja"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Napisz o problemie, nie o rozwiązaniu
+
+        Najcenniejsze zgłoszenia opisują **co jest uciążliwe w pracy**, a nie jak to
+        naprawić. Powód jest praktyczny: ten sam problem da się często rozwiązać
+        prościej, szybciej i bez nowego przycisku — ale tylko wtedy, gdy wiadomo,
+        o co naprawdę chodzi.
+
+        Jeśli masz gotowy pomysł, jest na niego osobne pole na końcu. Zacznij jednak
+        od tego, co Cię uwiera.
+
+        ---
+
+        **To repozytorium jest publiczne.** Nie wklejaj nazwisk, numerów PESEL, adresów
+        ani numerów ksiąg wieczystych. Jeśli potrzebujesz pokazać konkretny przypadek —
+        wyślij go mailem.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Co jest dziś uciążliwe"
+      description: "Opisz sytuację z własnej pracy, nie funkcję programu."
+      placeholder: "Przy każdym projekcie przepisuję ręcznie … , bo program pokazuje to dopiero po …"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: czestotliwosc
+    attributes:
+      label: "Jak często to Cię dotyka"
+      options:
+        - "Przy każdym dokumencie"
+        - "Przy każdym projekcie"
+        - "Kilka razy w projekcie"
+        - "Rzadko, ale wtedy boli"
+    validations:
+      required: true
+
+  - type: textarea
+    id: obejscie
+    attributes:
+      label: "Jak sobie z tym radzisz dzisiaj"
+      description: "Nawet „poprawiam ręcznie w Wordzie” jest ważną odpowiedzią — mówi, ile to naprawdę kosztuje."
+    validations:
+      required: true
+
+  - type: textarea
+    id: pomysl
+    attributes:
+      label: "Jak to widzisz (opcjonalnie)"
+      description: "Jeśli masz konkretny pomysł — opisz. Jeśli nie, zostaw puste, to nie jest wymagane."
+
+  - type: checkboxes
+    id: swiadomosc
+    attributes:
+      label: "Potwierdzenie"
+      options:
+        - label: "Sprawdziłem, że powyżej nie ma nazwisk, numerów PESEL, adresów ani numerów ksiąg wieczystych."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Co się stanie dalej.** Każda propozycja trafia do planu rozwoju i zostaje tu
+        na widoku. Część z nich pojawi się w kolejnych aktualizacjach — wtedy dostajecie
+        je bez dodatkowych kosztów. Te, które wymagają większej rozbudowy, dostaną
+        etykietę `poza wsparciem`; to nie jest odmowa, tylko informacja, że wymagają
+        osobnego ustalenia zakresu i terminu.
